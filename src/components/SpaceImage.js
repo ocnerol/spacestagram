@@ -1,10 +1,10 @@
-import react from "react";
+import { ImageListItem } from "@mui/material";
+import React from "react";
 
-export default function SpaceImage({
-  description,
-  photoURI,
-  title,
-  dateCreated,
-}) {
-  return;
+export default function SpaceImage({ photoURI, title, dateCreated }) {
+  return (
+    <ImageListItem>
+      <img src={photoURI} alt={title} />
+    </ImageListItem>
+  );
 }
