@@ -34,4 +34,26 @@ describe("NASA Image and Video Library API search method", () => {
       mockResult.data.collection.items.length
     );
   });
+
+  it("search results have image collection link", async () => {
+    const mockResultItem = {
+      href: "https://images-assets.nasa.gov/video/NHQ_2019_0311_Go Forward to the Moon/collection.json",
+    };
+
+    const mockResult = {
+      data: {
+        collection: {
+          items: [mockResultItem],
+        },
+      },
+    };
+    const mockResultImageLink = mockResult.data.collection.items[0].href;
+
+    axios.get.mockResolvedValue(mockResult);
+
+    const result = await searchNASAImageAPI("moon");
+    const resultImageLink = result.data.collection.items[0].href;
+
+    expect(resultImageLink).toEqual(mockResultImageLink);
+  });
 });
