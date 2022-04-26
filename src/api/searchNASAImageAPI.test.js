@@ -1,4 +1,4 @@
-import searchNASAImageAPI from "./nasaIVLAPI";
+import searchNASAImageAPI from "./searchNASAImageAPI";
 import axios from "axios";
 
 jest.mock("axios");
