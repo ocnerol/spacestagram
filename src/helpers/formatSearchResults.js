@@ -10,6 +10,9 @@ export default async function formatSearchResults(results) {
   const formattedResults = await Promise.all(
     results.map(async (result) => {
       const originalImageURI = await fetchOriginalImageURI(result.href);
+      // if image is in unsupported image file format, skip this result
+      if (originalImageURI.endsWith(".tif")) return;
+
       const [itemMetadata] = result.data;
       const { date_created: dateCreated, title } = itemMetadata;
 
@@ -20,5 +23,7 @@ export default async function formatSearchResults(results) {
       };
     })
   );
-  return formattedResults;
+
+  // filter out results with unsupported file formats that were skipped and left undefined in array
+  return formattedResults.filter((item) => item);
 }
