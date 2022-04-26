@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button, TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+
 import searchNASAImageAPI from "../api/searchNASAImageAPI";
 
 export default function SearchBar({ setSearchResults }) {
@@ -23,9 +25,9 @@ export default function SearchBar({ setSearchResults }) {
         value={search}
         onChange={handleChange}
       />
-      <Button variant="contained" onClick={handleSubmit}>
-        Search
-      </Button>
+      <IconButton variant="contained" onClick={handleSubmit}>
+        <SearchIcon />
+      </IconButton>
     </form>
   );
 }
