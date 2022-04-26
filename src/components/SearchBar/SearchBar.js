@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IconButton, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-import searchNASAImageAPI from "../api/searchNASAImageAPI";
+import searchNASAImageAPI from "../../api/searchNASAImageAPI";
 
 export default function SearchBar({ setSearchResults }) {
   const [search, setSearch] = useState("");
