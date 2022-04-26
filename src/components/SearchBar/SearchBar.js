@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import searchNASAImageAPI from "../../api/searchNASAImageAPI";
 import "./SearchBar.css";
+import formatSearchResults from "../../helpers/formatSearchResults";
 
 export default function SearchBar({ setSearchResults }) {
   const [search, setSearch] = useState("");
@@ -16,7 +17,8 @@ export default function SearchBar({ setSearchResults }) {
     e.preventDefault();
     const { data } = await searchNASAImageAPI(search);
     const { items } = data.collection;
-    setSearchResults(items);
+    const formattedResults = await formatSearchResults(items);
+    setSearchResults(formattedResults);
   };
   return (
     <form className="search-bar" onSubmit={handleSubmit}>
