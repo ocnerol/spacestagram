@@ -3,6 +3,7 @@ import { IconButton, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 import searchNASAImageAPI from "../../api/searchNASAImageAPI";
+import "./SearchBar.css";
 
 export default function SearchBar({ setSearchResults }) {
   const [search, setSearch] = useState("");
@@ -18,7 +19,7 @@ export default function SearchBar({ setSearchResults }) {
     setSearchResults(items);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-bar" onSubmit={handleSubmit}>
       <TextField
         label="Search into space"
         variant="filled"
@@ -26,7 +27,7 @@ export default function SearchBar({ setSearchResults }) {
         onChange={handleChange}
       />
       <IconButton variant="contained" onClick={handleSubmit}>
-        <SearchIcon />
+        <SearchIcon fontSize="large" />
       </IconButton>
     </form>
   );
