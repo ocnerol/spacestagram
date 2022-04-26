@@ -8,11 +8,13 @@ const actualCollectionURL =
 
 describe("NASA Image and Video Library API search method", () => {
   it("returns a string", async () => {
-    const mockResult = "example string";
+    const mockResult = {
+      data: ["example string"],
+    };
 
     axios.get.mockResolvedValue(mockResult);
 
     const result = await fetchOriginalImageURI(actualCollectionURL);
-    expect(result).toEqual(mockResult);
+    expect(result).toEqual(mockResult.data[0]);
   });
 });
