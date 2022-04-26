@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextField } from "@mui/material";
 import searchNASAImageAPI from "../api/searchNASAImageAPI";
 
-export default function SearchBar() {
+export default function SearchBar({ setSearchResults }) {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ export default function SearchBar() {
     e.preventDefault();
     const { data } = await searchNASAImageAPI(search);
     const { items } = data.collection;
-    console.log({ items });
+    setSearchResults(items);
   };
   return (
     <form onSubmit={handleSubmit}>
