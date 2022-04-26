@@ -1,12 +1,7 @@
 import axios from "axios";
 
-// NASA Image and Video Library API (nasaIVLAPI)
-const nasaIVLAPI = axios.create({
-  baseURL: "https://images-api.nasa.gov",
-});
+// queries NASA Image and Video Library API (nasaIVLAPI) with specified query string
+const searchNASAImageAPI = async (query) =>
+  await axios.get(`https://images-api.nasa.gov/search?q=${query}`);
 
-nasaIVLAPI.search = async (query) => {
-  // const results = nasaIVLAPI.get(`/search?q=${query}`);
-};
-
-export default nasaIVLAPI;
+export default searchNASAImageAPI;
