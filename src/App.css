@@ -9,3 +9,9 @@
 .spiritualizedArtWork {
   max-width: 100%
 }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+}
