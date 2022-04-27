@@ -6,9 +6,9 @@ import "./Header.css";
 
 export default function Header({ setSearchResults }) {
   return (
-    <div className="header">
+    <header>
       <AppTitle />
       <SearchBar setSearchResults={setSearchResults} />
-    </div>
+    </header>
   );
 }
