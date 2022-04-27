@@ -6,15 +6,15 @@ import Header from "./components/Header/Header";
 import SpiritualizedPlaceholder from "./components/SpiritualizedPlaceholder";
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
+  const [displayPlaceholder, setDisplayPlaceholder] = useState(true);
   const [searchResults, setSearchResults] = useState([]);
   return (
     <div className="App">
       <Header
         setSearchResults={setSearchResults}
-        setSearchInput={setSearchInput}
+        setDisplayPlaceholder={setDisplayPlaceholder}
       />
-      {searchInput === "" ? (
+      {displayPlaceholder ? (
         <SpiritualizedPlaceholder />
       ) : (
         <Feed searchResults={searchResults} />
