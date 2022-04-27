@@ -18,6 +18,8 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 0rem 1rem;
+  position: fixed;
+  bottom: 0px;
 }
 
 .screen-reader-only {
