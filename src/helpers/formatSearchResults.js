@@ -14,7 +14,9 @@ export default async function formatSearchResults(results) {
       if (originalImageURI.endsWith(".tif")) return;
 
       const [itemMetadata] = result.data;
-      const { date_created: dateCreated, title } = itemMetadata;
+      const { date_created, title } = itemMetadata;
+      // get YYYY-MM-DD from date_created
+      const dateCreated = date_created.slice(0, 10);
 
       return {
         dateCreated,
