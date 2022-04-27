@@ -4,12 +4,12 @@ import AppTitle from "../AppTitle";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
 
-export default function Header({ setSearchInput, setSearchResults }) {
+export default function Header({ setDisplayPlaceholder, setSearchResults }) {
   return (
     <header className="main">
       <AppTitle />
       <SearchBar
-        setSearchInput={setSearchInput}
+        setDisplayPlaceholder={setDisplayPlaceholder}
         setSearchResults={setSearchResults}
       />
     </header>
