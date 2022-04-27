@@ -19,3 +19,13 @@ footer {
   justify-content: space-between;
   padding: 0rem 1rem;
 }
+
+.screen-reader-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

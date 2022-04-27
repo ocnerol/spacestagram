@@ -37,6 +37,7 @@ export default function SearchBar({ setDisplayPlaceholder, setSearchResults }) {
       />
       <IconButton variant="contained" onClick={handleSubmit}>
         <SearchIcon fontSize="large" />
+        <p className="screen-reader-only">Search</p>
       </IconButton>
     </form>
   );
