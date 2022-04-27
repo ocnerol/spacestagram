@@ -1,5 +1,10 @@
 import React from "react";
 
 export default function AppTitle() {
-  return <h1>Spacestagram</h1>;
+  return (
+    <div>
+      <h1>Spacestagram</h1>
+      <p>Journey into the universe</p>
+    </div>
+  );
 }
