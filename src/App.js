@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Feed from "./components/Feed";
+import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
 import SpiritualizedPlaceholder from "./components/SpiritualizedPlaceholder";
 
@@ -18,6 +19,7 @@ function App() {
       ) : (
         <Feed searchResults={searchResults} />
       )}
+      <Footer />
     </div>
   );
 }
