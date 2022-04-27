@@ -6,12 +6,13 @@ import searchNASAImageAPI from "../../api/searchNASAImageAPI";
 import "./SearchBar.css";
 import formatSearchResults from "../../helpers/formatSearchResults";
 
-export default function SearchBar({ setSearchResults }) {
+export default function SearchBar({ setSearchInput, setSearchResults }) {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
     const newChar = e.target.value;
     setSearch(newChar);
+    setSearchInput(newChar);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,8 +24,9 @@ export default function SearchBar({ setSearchResults }) {
   return (
     <form className="search-bar" onSubmit={handleSubmit}>
       <TextField
+        color="grey"
         label="Search into space"
-        variant="filled"
+        variant="outlined"
         value={search}
         onChange={handleChange}
       />
