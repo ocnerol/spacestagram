@@ -12,7 +12,7 @@ export default function Feed({ searchResults }) {
     />
   ));
   return (
-    <ImageList variant="masonry" cols={3} gap={8}>
+    <ImageList variant="standard" cols={3} gap={8}>
       {feedItems}
     </ImageList>
   );
