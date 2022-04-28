@@ -1,6 +1,6 @@
 # [Spacestagram](https://ocnerol.github.io/spacestagram/)
 
-Spacestagram is a simple, single-page app that allows you to search for and view images publicly available through NASA's Image and Video Library API.
+Spacestagram is a simple, single-page app that allows you to search for and view images of the galaxy and beyond. Images are fetched from NASA's Image and Video Library API.
 
 Click [here](https://ocnerol.github.io/spacestagram/) to visit the app.
 
