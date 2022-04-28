@@ -3,6 +3,7 @@ import "./App.css";
 import Feed from "./components/Feed";
 import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
+import Loading from "./components/Loading";
 import SpiritualizedPlaceholder from "./components/SpiritualizedPlaceholder";
 
 function App() {
@@ -17,11 +18,8 @@ function App() {
         setDisplayPlaceholder={setDisplayPlaceholder}
         setLoading={setLoading}
       />
-      {displayPlaceholder ? (
-        <SpiritualizedPlaceholder />
-      ) : (
-        <Feed searchResults={searchResults} />
-      )}
+      {displayPlaceholder && <SpiritualizedPlaceholder />}
+      {loading ? <Loading /> : <Feed searchResults={searchResults} />}
       <Footer />
     </div>
   );
