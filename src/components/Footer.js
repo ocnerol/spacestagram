@@ -9,7 +9,7 @@ export default function Footer() {
         Spiritualized (Circle artwork taken directly from album cover).
       </p>
       <p>
-        Created by <a href="https://www.github.com/ocnerol">Lorenço</a>
+        Created by <a href="https://www.github.com/ocnerol">Lorenço</a>.
       </p>
     </footer>
   );
