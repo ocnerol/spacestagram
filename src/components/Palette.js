@@ -11,7 +11,7 @@ const theme = createTheme({
       main: "#C0AFE2",
     },
     midPurple: {
-      main: "#CEC2B",
+      main: "#CEC2EB",
     },
     lighterPurple: {
       main: "#DDD5F3",
