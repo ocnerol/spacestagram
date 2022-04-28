@@ -18,7 +18,7 @@ export default function SearchBar({
     const newChar = e.target.value;
     setSearch(newChar);
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (search === "") {

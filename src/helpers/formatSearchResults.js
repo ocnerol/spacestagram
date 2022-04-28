@@ -9,20 +9,24 @@ export default async function formatSearchResults(results) {
 
   const formattedResults = await Promise.all(
     results.map(async (result) => {
-      const originalImageURI = await fetchOriginalImageURI(result.href);
-      // if image is in unsupported image file format, skip this result
-      if (originalImageURI.endsWith(".tif")) return;
+      try {
+        const originalImageURI = await fetchOriginalImageURI(result.href);
+        // if image is in unsupported image file format, skip this result
+        if (originalImageURI.endsWith(".tif")) return;
 
-      const [itemMetadata] = result.data;
-      const { date_created, title } = itemMetadata;
-      // get YYYY-MM-DD from date_created
-      const dateCreated = date_created.slice(0, 10);
+        const [itemMetadata] = result.data;
+        const { date_created, title } = itemMetadata;
+        // get YYYY-MM-DD from date_created
+        const dateCreated = date_created.slice(0, 10);
 
-      return {
-        dateCreated,
-        originalImageURI,
-        title,
-      };
+        return {
+          dateCreated,
+          originalImageURI,
+          title,
+        };
+      } catch (error) {
+        console.log("error formatting results:", error);
+      }
     })
   );
 
