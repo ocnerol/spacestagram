@@ -5,7 +5,7 @@ import Palette from "./Palette";
 export default function Loading() {
   return (
     <Palette>
-      <div id="loading-bar">
+      <div id="loading">
         <LinearProgress color="darkestPurple" />
         <LinearProgress color="darkerPurple" />
         <LinearProgress color="midPurple" />
