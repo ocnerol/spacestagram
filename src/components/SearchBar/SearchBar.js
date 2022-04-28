@@ -6,7 +6,11 @@ import searchNASAImageAPI from "../../api/searchNASAImageAPI";
 import "./SearchBar.css";
 import formatSearchResults from "../../helpers/formatSearchResults";
 
-export default function SearchBar({ setDisplayPlaceholder, setSearchResults }) {
+export default function SearchBar({
+  setDisplayPlaceholder,
+  setLoading,
+  setSearchResults,
+}) {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {

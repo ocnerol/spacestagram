@@ -15,6 +15,7 @@ function App() {
       <Header
         setSearchResults={setSearchResults}
         setDisplayPlaceholder={setDisplayPlaceholder}
+        setLoading={setLoading}
       />
       {displayPlaceholder ? (
         <SpiritualizedPlaceholder />
