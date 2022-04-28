@@ -8,6 +8,8 @@ import SpiritualizedPlaceholder from "./components/SpiritualizedPlaceholder";
 function App() {
   const [displayPlaceholder, setDisplayPlaceholder] = useState(true);
   const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="App">
       <Header
