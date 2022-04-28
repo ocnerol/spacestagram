@@ -31,3 +31,11 @@ footer {
   white-space: nowrap;
   width: 1px;
 }
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 0rem 10rem;
+}
