@@ -23,6 +23,7 @@ export default function SearchBar({
 
     if (search === "") {
       setDisplayPlaceholder(true);
+      setSearchResults([]);
     } else {
       setDisplayPlaceholder(false);
       setSubmit(true);
