@@ -2,9 +2,26 @@ import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
+  // purple gradient from darkest to lightest
   palette: {
-    primary: "#B399D4",
-    secondary: "#F5E1FD",
-    tertiary: "#CE9DD9",
+    darkestPurple: {
+      main: "#B19CD7",
+    },
+    darkerPurple: {
+      main: "#C0AFE2",
+    },
+    midPurple: {
+      main: "#CEC2B",
+    },
+    lighterPurple: {
+      main: "#DDD5F3",
+    },
+    lightestPurple: {
+      main: "#EBE8FC",
+    },
   },
 });
+
+export default function Palette({ children }) {
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+}
