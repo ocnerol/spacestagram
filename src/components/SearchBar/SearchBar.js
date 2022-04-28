@@ -19,10 +19,16 @@ export default function SearchBar({
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await searchNASAImageAPI(search);
-    const { items } = data.collection;
-    const formattedResults = await formatSearchResults(items);
-    setSearchResults(formattedResults);
+    setLoading(true);
+    try {
+      const { data } = await searchNASAImageAPI(search);
+      const { items } = data.collection;
+      const formattedResults = await formatSearchResults(items);
+      setSearchResults(formattedResults);
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
 
     if (search === "") {
       setDisplayPlaceholder(true);
